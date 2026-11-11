@@ -7,7 +7,8 @@ React 19 + TypeScript, built with Vite. The API it talks to is in [`../BE`](../B
 ### Prerequisites
 
 - [Node.js](https://nodejs.org/) 20.19+ or 22+ (check with `node --version`)
-- The backend API running on http://localhost:5080 (see [`../BE/README.md`](../BE/README.md))
+- The backend API running on http://localhost:5080 (see [`../BE/README.md`](../BE/README.md)).
+  Without SQL Server, start it with `dotnet run --project src/TicketTracker.Api --launch-profile sqlite` from `BE`.
 
 ### Start the dev server
 
