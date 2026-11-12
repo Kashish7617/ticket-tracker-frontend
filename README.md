@@ -75,21 +75,16 @@ If your API runs somewhere else, copy `.env.example` to `.env.local` and change 
 | Variable | Used by | Purpose |
 |---|---|---|
 | `API_PROXY_TARGET` | `npm run dev` only | Where the dev server forwards `/api` (default `http://localhost:5080`) |
-| `VITE_API_BASE_URL` | production build | Absolute API URL baked into the bundle, e.g. `https://ticket-tracker-api.onrender.com`. Leave it empty when the UI and API share an origin (e.g. behind the nginx proxy). |
+| `VITE_API_BASE_URL` | production build | Absolute API URL baked into the bundle. Set in [`.env.production`](.env.production) to the deployed API, `https://ticket-tracker-backend-5cke.onrender.com`. Leave it empty when the UI and API share an origin (e.g. behind the nginx proxy). |
 
-`VITE_API_BASE_URL` is read at **build time**, so rebuild or redeploy after changing it.
+`VITE_API_BASE_URL` is read at **build time**, so rebuild or redeploy after changing it. A value set in the hosting platform's environment variables overrides `.env.production`. The Docker build ignores `.env.production` and keeps using the same-origin nginx proxy.
 
 ---
 
 ## Deploying to Vercel
 
 1. On [Vercel](https://vercel.com), go to **Add New → Project** and import this repo. It detects **Vite** automatically (build: `npm run build`, output: `dist`).
-2. Under **Environment Variables**, add:
-
-   | Key | Value |
-   |---|---|
-   | `VITE_API_BASE_URL` | your backend URL, e.g. `https://ticket-tracker-api.onrender.com` (no trailing slash) |
-
+2. No environment variables are needed: the backend URL is already set in [`.env.production`](.env.production). To point at a different backend, set `VITE_API_BASE_URL` under **Environment Variables** (no trailing slash).
 3. Deploy.
 4. On the **backend**, allow the Vercel URL for CORS: set `Cors__AllowedOrigins__0=https://<your-app>.vercel.app` on Render (see the [backend README](https://github.com/Kashish7617/ticket-tracker-backend#deploying-to-render)).
 
