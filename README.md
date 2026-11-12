@@ -1,5 +1,7 @@
 # Support Ticket Tracker: Frontend
 
+[![CI](https://github.com/Kashish7617/ticket-tracker-frontend/actions/workflows/ci.yml/badge.svg)](https://github.com/Kashish7617/ticket-tracker-frontend/actions/workflows/ci.yml)
+
 
 Web UI for a support ticket tracker, built with **React 19 + TypeScript** and **Vite**.
 
@@ -125,3 +127,9 @@ src/
 - Vitest + React Testing Library tests for the form and list states, and a Playwright end-to-end test
 - An edit-ticket form (the API already supports `PUT`)
 - Login once the API has authentication
+
+---
+
+## CI
+
+[`.github/workflows/ci.yml`](.github/workflows/ci.yml) runs on every push and pull request: `npm ci` → lint → type-check + build.
