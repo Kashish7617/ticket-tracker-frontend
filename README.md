@@ -7,6 +7,15 @@ Web UI for a support ticket tracker, built with **React 19 + TypeScript** and **
 
 Backend API (ASP.NET Core + EF Core): **[Kashish7617/ticket-tracker-backend](https://github.com/Kashish7617/ticket-tracker-backend)**
 
+## Live demo
+
+| | URL |
+|---|---|
+| App (Vercel) | https://ticket-tracker-frontend-psi.vercel.app |
+| API (Render) | https://ticket-tracker-backend-5cke.onrender.com/api/tickets |
+
+> The API runs on Render's free plan and sleeps when idle, so the first request can take 30–50 seconds.
+
 ---
 
 ## Features
